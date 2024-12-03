@@ -1,0 +1,483 @@
+<html>
+
+<head>
+  
+    <title>Menú Personalizado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center; /* Centra todo el contenido horizontalmente */
+            align-items: center; /* Alinea verticalmente */
+            flex-direction: column;
+            background-image: url("C:/Users/fersa/OneDrive/Escritorio/proyecto/URBAN LOGO.jpg"); /* Usa url() para definir la imagen */
+            background-size: cover; /* Escala la imagen para cubrir todo el fondo */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            background-position: center; /* Centra la imagen de fondo */
+        }
+
+        nav {
+            background-color: #ea1dc1;
+            color: #fff;
+            padding: 10px;
+            width: 100%; /* Asegura que el nav ocupe todo el ancho */
+            max-width: 1400px; /* Limita el ancho máximo del menú */
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center; /* Centra los elementos del menú */
+        }
+
+        nav ul li {
+            position: relative;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        nav ul li:hover > a {
+            background-color: #555;
+        }
+
+        /* Submenús */
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            background-color: #333;
+            padding: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul li ul li {
+            margin-bottom: 10px;
+        }
+
+        nav ul li ul li a {
+            white-space: nowrap;
+        }
+
+        /* Ocultar todas las secciones por defecto */
+        section {
+            display: none;
+            padding: 20px;
+        }
+
+        /* Sección visible */
+        section.active {
+            display: block;
+        }
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .product {
+            width: 200px;
+            height: 400px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0px 4px 10px #ffffff;
+            background-color: #ddd;
+        }
+
+        .product img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        .product h3 {
+            font-size: 1.1em;
+            margin: 0;
+        }
+
+        .product p {
+            margin: 0;
+            font-size: 1em;
+        }
+
+        footer {
+            text-align: center;
+            padding: 200px;
+            
+            margin-top: 20px;
+        }
+
+        .carousel {
+            background-color: black;
+            width: 80%;
+            max-width: 1000%; /* Limita el tamaño máximo del carrusel */
+            overflow: hidden;
+            margin: 20px auto; /* Centra horizontalmente el carrusel */
+            position: relative;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+
+        .carousel-images {
+            display: flex;
+            animation: slide 18s infinite;
+        }
+
+        .carousel-images img, .carousel-images video {
+            width: 100%;
+            height: auto;
+            border: 10px; /* Bordes redondeados */
+        }
+
+        .textcarousel {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-size: 1.5rem;
+            padding: 20px;
+            margin: 10px auto;
+            width: 80%;
+            max-width: 800px; /* Ancho máximo ajustado */
+            border-radius: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: #fff;
+            font-size: 150px; /* Aumentado tamaño de los íconos */
+            background-color: #ccc;
+}
+
+        
+
+        .social-links a:hover {
+            color: #ea1dc1;
+        }
+        map {
+            width: 100%; /* Ajustado el tamaño del mapa para ser más grande */
+            height: 500px; /* Ajustado el tamaño para que sea más alto */
+            margin-top: 60px;
+            border: 2px solid #ddd;
+            border-radius: 50px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <head><head>
+        <!-- Agregar Font Awesome para los íconos -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showSection('inicio')">Inicio</a></li>
+            <li>
+                <a href="#">Productos</a>
+                <ul>
+                    <li><a href="#" onclick="showSection('hombres')">Hombres</a></li>
+                    <li><a href="#" onclick="showSection('mujeres')">Mujeres</a></li>
+                    <li><a href="#" onclick="showSection('accesorios')">Accesorios</a></li>
+                    <li><a href="#" onclick="showSection('calzado')">Calzado</a></li>
+                </ul>
+            </li>
+            <li><a href="#" onclick="showSection('marcas')">Marcas</a></li>
+            <li><a href="#" onclick="showSection('compras')">Compras</a></li>
+        </ul>
+    </nav>
+
+    
+        
+    <section id="inicio" class="active">
+        <!-- Redes Sociales -->
+        <div class="social-icons">
+            <a href="https://www.facebook.com/share/moZ8ucqXcTRiJu2c/" target="_blank">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </section>
+
+    
+        
+    
+    <!-- Nueva sección de Marcas -->
+    <section id="marcas">
+     
+        
+        
+
+    
+        
+        <div class="textcarousel">
+            <p>TIENDAS URBAN</p>
+           <p>¡Descubre las mejores marcas y productos de importacion!</p>
+        </div>
+    
+        <div class="carousel">
+            <div class="carousel-images">
+                <video autoplay loop muted>
+                    <source src="file:///C:/Users/fersa/OneDrive/Imágenes/NIKE_COMPANY_loop_032323.mp4" type="video/mp4">
+                    Tu navegador no soporta el formato de video.
+                </video>
+                <img src="file:///C:/Users/fersa/OneDrive/Escritorio/proyecto/logos%20nike.jpg" alt="Logo Nike">
+                <img src="C:/Users/fersa/OneDrive/Imágenes/marca-jordan.jpg" alt="Jordan">
+            </div>
+        </div>
+        <footer>
+            <!-- Mapas de Google en el footer -->
+        
+            <div class="maps">
+                <div class="map">
+                    
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120396.29048261528!2d-99.35455620273439!3d19.4390006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2021ad90de951%3A0xeb5e2e00ba385bd6!2sNike%20Store%20Antara%20Polanco!5e0!3m2!1ses!2smx!4v1733207014818!5m2!1ses!2smx" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="map">
+                    
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120396.29048261528!2d-99.35455620273439!3d19.4390006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff337ed40f7d%3A0x34dee2b7eb7a5abe!2sNike%20Store%20Reforma!5e0!3m2!1ses!2smx!4v1733207518672!5m2!1ses!2smx" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </footer>
+    </section>
+    
+    <script>
+        // Variables del carrusel
+        let currentIndex = 0;
+        const items = document.querySelectorAll('.carousel-images > *');
+        const totalItems = items.length;
+    
+        function moveCarousel(direction) {
+            currentIndex = (currentIndex + direction + totalItems) % totalItems;
+            updateCarousel();
+        }
+    
+        function updateCarousel() {
+            const carouselImages = document.querySelector('.carousel-images');
+            carouselImages.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+    
+        // Configuración del carrusel para mover las imágenes/videos automáticamente
+        setInterval(() => {
+            moveCarousel(1);
+        }, 900); 
+    </script>
+    
+  
+    
+
+    <section id="hombres">
+        <h2>Productos para Hombres</h2>
+        <div class="products">
+            <div class="product">
+                <img src="C:\Users\fersa\OneDrive\Escritorio\proyecto\NIKE FORM CHAM.jpg" alt="Producto 1">
+                <h3>SUDADERA DEPORTIVA NIKE</h3>
+                <p>$800 MXN</p>
+            </div>
+            <div class="product">
+                <img src="C:\Users\fersa\OneDrive\Escritorio\proyecto\NIKE CLUB AZUL.jpg" alt="Producto 2">
+                <h3>CONJUNTO PANTS NIKE</h3>
+                <p>$1800 MXN</p>
+            </div>
+            <div class="product">
+                <img src="C:\Users\fersa\OneDrive\Escritorio\proyecto\NIKE MILLER.jpg" alt="Producto 3">
+                <h3>CHAMARRA OLIVO NIKE</h3>
+                <p>$1000 MXN</p>
+            </div>
+            <div class="product">
+                <img src="NIKE ROSA.jpg" alt="NIKE ROSA"
+                <h3>CHAMARRA OLIVO NIKE</h3>
+                <p>$900 MXN</p>
+        </div>
+            <div class="product">
+                <img src="NIKE SUD.jpg" alt="Producto 3">
+                <h3>CONJUNTO PANTS OLIVO</h3>
+                <p>$1800 MXN</p>
+            </div>
+            <div class="product">
+                <img src="NIKE VERDE.jpg" alt="Producto 3">
+                <h3>CONJUNTO PANTS MILITAR</h3>
+                <p>$1800 MXN</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="mujeres">
+        <h2>Productos para Mujeres</h2>
+        <div class="products">
+            <div class="product">
+                <img src="C:\Users\fersa\OneDrive\Escritorio\proyecto\JORDAN PANT.jpg" alt="Producto 1">
+                <h3>CONJUNTO PANTS JORDAN</h3>
+                <p>$1500 MXN</p>
+            </div>
+            <div class="product">
+                <img src="C:\Users\fersa\OneDrive\Escritorio\proyecto\JORDAN SUD.jpg" alt="Producto 2">
+                <h3>SUDADERA BLACK JORDAN</h3>
+                <p>$800 MXN</p>
+            </div>
+            <div class="product">
+                <img src="C:\Users\fersa\OneDrive\Escritorio\proyecto\NIKE NEGRA.jpg" alt="Producto 3">
+                <h3>CHAMARRA DEPORTIVA NIKE</h3>
+                <p>$1800 MXN</p>
+            </div>
+            <div class="product">
+                <img src="C:\Users\fersa\OneDrive\Escritorio\proyecto\NIKE ROSA2.jpg" alt="NIKE ROSA"
+                <h3>CHAMARRA DEPORTIVA ROSA</h3>
+                <p>$900 MXn</p>
+        </div>
+            <div class="product">
+                <img src="C:\Users\fersa\OneDrive\Escritorio\proyecto\PANT ROSA2.jpg" alt="Producto 3">
+                <h3>CONJUNTO PANTS NIKE</h3>
+                <p>$1800 MXN</p>
+            </div>
+            <div class="product">
+                <img src="C:\Users\fersa\OneDrive\Escritorio\proyecto\PANTS VERDE.jpg" alt="Producto 3">
+                <h3>CONJUNTO PANTS DEPORTIVO</h3>
+                <p>$2100 MXN</p>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section id="accesorios">
+        <h2>Accesorios</h2>
+        <div class="products">
+            <div class="product">
+                <img src="C:\Users\fersa\OneDrive\Escritorio\proyecto\GORRA JOR.jpg" alt="Producto 1">
+                <h3>GORRA JORDAN</h3>
+                <p>$500 MXN</p>
+            </div>
+            <div class="product">
+                <img src="C:\Users\fersa\OneDrive\Escritorio\proyecto\MOCHI AMAR.jpg" alt="Producto 2">
+                <h3>MOCHILA NIKE HEREDITAGE</h3>
+                <p>$800 MXN</p>
+            </div>
+            <div class="product">
+                <img src="C:\Users\fersa\OneDrive\Escritorio\proyecto\U+J+APEX+BUCKET+WINTER.jpg" alt="Producto 3">
+                <h3>BUCKET JORDA 2VISTAS</h3>
+                <p>$800 MXN</p>
+            </div>
+            <div class="product">
+                <img src="C:\Users\fersa\OneDrive\Escritorio\proyecto\CALCETAS JOR.jpg" alt="NIKE ROSA"
+                <h3> CALCETAS JORDAN</h3>
+                <p>$300 MXn</p>
+        </div>
+            <div class="product">
+                <img src="C:\Users\fersa\OneDrive\Escritorio\proyecto\GORRO NIKE.jpg" alt="Producto 3">
+                <h3>GORRO PINK NIKE</h3>
+                <p>$800 MXN</p>
+            </div>
+            <div class="product">
+                <img src="C:\Users\fersa\OneDrive\Escritorio\proyecto\MOCHI ROSA.jpg" alt="Producto 3">
+                <h3>MOCHILA PINK NIKE</h3>
+                <p>$800 MXN</p>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section id="calzado">
+        <h2>Calzado</h2>
+        <div class="products">
+            <div class="product">
+                <img src="C:\Users\fersa\OneDrive\Escritorio\proyecto\JORDAN LOW.jpg" alt="Producto 1">
+                <h3>JORDAN SPIZIKE Low</h3>
+                     <p>$3300 MXN</p>
+            </div>
+            <div class="product">
+                <img src="C:\Users\fersa\OneDrive\Escritorio\proyecto\AF1 LOW N.jpg" alt="Producto 2">
+                <h3>AIR FORCE LOW BLACK</h3>
+                <p>$2800 MXN</p>
+            </div>
+            <div class="product">
+                <img src="C:\Users\fersa\OneDrive\Escritorio\proyecto\NIKE MID.jpg" alt="Producto 3">
+                <h3>AIR JORDAN MID CHERRY</h3>
+                <p>$2800 MXN</p>
+            </div>
+            <div class="product">
+                <img src="C:\Users\fersa\OneDrive\Escritorio\proyecto\NIKE DUNK.jpg" alt="NIKE ROSA"
+                <h3>NIKE DUNK</h3>
+                <p>$2900 MXn</p>
+        </div>
+            <div class="product">
+                <img src="C:\Users\fersa\OneDrive\Escritorio\proyecto\AIR MAX N.jpg" alt="Producto 3">
+                <h3>NIKE AIR MAX BLACK</h3>
+                <p>$1800 MXN</p>
+            </div>
+            <div class="product">
+                <img src="C:\Users\fersa\OneDrive\Escritorio\proyecto\AF1 CLA B.jpg" alt="Producto 3">
+                <h3>AIR FORCE ONE 1987</h3>
+                <p>$2200 MXN</p>
+            </div>
+        </div>
+
+        </div>
+    </section>
+
+    
+
+    <section id="compras">
+        <footer>
+            <h3>AÚN NO TIENES PRODUCTOS EN TU CARRITO</h3>
+            <P>
+                <strong>Horarios de Atención:</strong> Lunes a sábado: 8:00 - 20:00<br>
+                <strong>Teléfono:</strong> 55 8880 2222<br>
+                <strong>Formas de Pago:</strong><br>
+                <!-- Íconos de las formas de pago -->
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-paypal"></i>
+                <i class="fab fa-cc-discover"></i>
+            </p>
+        </footer>
+    </section>
+    
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => section.classList.remove('active'));
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+        }
+    </script>
+    
+</body>
+</html>
